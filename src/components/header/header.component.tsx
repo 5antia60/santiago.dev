@@ -11,10 +11,10 @@ export default function HeaderComponent(): ReactElement {
       <Title>Santiago Delgado</Title>
 
       <Areas>
-        <Button>home</Button>
-        <Button>about</Button>
-        <Button>projects</Button>
-        <Button>contact</Button>
+        <Button>início</Button>
+        <Button>sobre mim</Button>
+        <Button>projetos</Button>
+        <Button>contato</Button>
       </Areas>
     </Main>
   )

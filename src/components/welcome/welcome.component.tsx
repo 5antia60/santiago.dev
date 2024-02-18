@@ -14,9 +14,7 @@ export default function WelcomeComponent(): ReactElement {
           <Title>Santiago Delgado 🌱</Title>
           <Subtitle>Desenvolvedor FullStack | TypeScript</Subtitle>
 
-          <Description>Meu nome é Santiago e sou um Desenvolvedor Web/App, trabalho com a criação de Front-end e Back-end de Websites e Aplicativos Web que levam ao sucesso do produto como um todo.</Description>
-          <Description>Também gosto de compartilhar conteúdo relacionado ao que aprendi ao longo dos anos no Desenvolvimento Web, para que possa ajudar outras pessoas da comunidade de desenvolvimento. Fica à vontade para se conectar ou me seguir no meu LinkedIn/Github, lá eu busco compartilhar conteúdo útil relacionado ao Desenvolvimento Web e Programação.</Description>
-          <Description>Estou aberto a oportunidades onde posso contribuir, aprender e crescer. Se você tiver uma boa oportunidade que corresponda às minhas habilidades e experiência, vou deixar dados para contato aqui tambêm :D</Description>
+          <Description>Oi, meu nome é Santiago e sou um Desenvolvedor Web/App. Este é o meu portifólio para que possa me conhecer melhor.</Description>
         </InfoArea>
 
         <Avatar src={ profileImage } />
