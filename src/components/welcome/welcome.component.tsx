@@ -2,7 +2,7 @@
 
 import { ReactElement } from 'react';
 import { Avatar, Content, Description, InfoArea, Main, Subtitle, Title } from './welcome.component.styles.ts';
-import profileImage from './../../assets/images/profile.jpeg';
+import profileImg from './../../assets/images/profile.jpeg';
 
 //#endregion
 
@@ -17,7 +17,7 @@ export default function WelcomeComponent(): ReactElement {
           <Description>Oi, meu nome é Santiago e sou um Desenvolvedor Web/App. Este é o meu portifólio para que possa me conhecer melhor.</Description>
         </InfoArea>
 
-        <Avatar src={ profileImage } />
+        <Avatar src={ profileImg } />
       </Content>
     </Main>
   )

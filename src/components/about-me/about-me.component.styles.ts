@@ -82,28 +82,6 @@ export const AboutArea = styled.div.attrs(() => ({
   margin-top: 4rem;
 `;
 
-export const Skills = styled.div.attrs(() => ({
-  className: 'Skills',
-}))`
-  display: flex;
-  flex-direction: column;
-
-  width: calc(50% - 1rem);
-
-  gap: 2rem;
-
-  text-align: justify;
-`;
-
-export const SkillsArea = styled.div.attrs(() => ({
-  className: 'SkillsArea',
-}))`
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-`;
-
 export const Intro = styled.div.attrs(() => ({
   className: 'Intro',
 }))`
@@ -115,25 +93,8 @@ export const Intro = styled.div.attrs(() => ({
   text-align: start;
 `;
 
-export const PillsArea = styled.div.attrs(() => ({
-  className: 'PillsArea',
+export const SkillsArea = styled.div.attrs(() => ({
+  className: 'SkillsArea',
 }))`
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-
-  margin-top: 1rem;
+  width: calc(50% - 1rem);
 `;
-
-export const Pill = styled.p.attrs(() => ({
-  className: 'Pill',
-}))`
-  margin: 0 0.5rem 0.6rem 0;
-  padding: 0.3rem 1rem;
-
-  color: ${ ({ theme }) => theme.colors.secondaryColor };
-  background: ${ ({ theme }) => theme.colors.secondaryBackground };
-
-  border-radius: 1rem;
-`;
-

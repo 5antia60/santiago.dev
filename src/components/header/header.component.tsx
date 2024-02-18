@@ -13,6 +13,7 @@ export default function HeaderComponent(): ReactElement {
       <Areas>
         <Button>início</Button>
         <Button>sobre mim</Button>
+        <Button>experiência</Button>
         <Button>projetos</Button>
         <Button>contato</Button>
       </Areas>

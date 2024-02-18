@@ -31,7 +31,7 @@ export const Areas = styled.div.attrs(() => ({
   justify-content: space-between;
   
   height: 100%;
-  width: 35%;
+  width: 40%;
 `;
 
 export const Button = styled.button.attrs(() => ({

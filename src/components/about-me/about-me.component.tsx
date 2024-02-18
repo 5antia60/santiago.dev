@@ -6,10 +6,11 @@ import {
   Content,
   Description,
   Intro, AboutTitle,
-  Main, Skills,
+  Main,
   Subtitle,
-  Title, PillsArea, Pill, SkillsArea, Highlight, Link
+  Title, Highlight, Link, SkillsArea
 } from './about-me.component.styles.ts';
+import SkillsAreaComponent from '../skills-area/skills-area.component.tsx';
 
 //#endregion
 
@@ -34,7 +35,7 @@ export default function AboutMeComponent(): ReactElement {
     'Git',
   ];
 
-  const knowledgesList: string[] = [
+  const knowledgeList: string[] = [
     'Java',
     'C#',
     'C++',
@@ -71,23 +72,12 @@ export default function AboutMeComponent(): ReactElement {
               <Highlight> crescer</Highlight>. Se você tiver uma boa oportunidade que corresponda às minhas habilidades e experiência, vou deixar dados para contato aqui tambêm :D</Description>
           </Intro>
 
-          <Skills>
-            <SkillsArea>
-              <AboutTitle>Minhas habilidades...</AboutTitle>
-
-              <PillsArea>
-                { skillsList.map(s => <Pill>{ s }</Pill>) }
-              </PillsArea>
-            </SkillsArea>
-
-            <SkillsArea>
-              <AboutTitle>Outros conhecimentos..</AboutTitle>
-
-              <PillsArea>
-                { knowledgesList.map(k => <Pill>{ k }</Pill>) }
-              </PillsArea>
-            </SkillsArea>
-          </Skills>
+          <SkillsArea>
+            <SkillsAreaComponent
+              skillsList={ skillsList }
+              knowledgeList={ knowledgeList }
+            />
+          </SkillsArea>
         </AboutArea>
       </Content>
     </Main>

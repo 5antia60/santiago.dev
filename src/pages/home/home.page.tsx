@@ -4,6 +4,7 @@ import { ReactElement } from 'react';
 import { Main } from './home.page.styles.tsx';
 import WelcomeComponent from '../../components/welcome/welcome.component.tsx';
 import AboutMeComponent from '../../components/about-me/about-me.component.tsx';
+import ExperienceComponent from '../../components/experience/experience.component.tsx';
 
 //#endregion
 
@@ -12,6 +13,7 @@ export default function HomePage(): ReactElement {
     <Main>
       <WelcomeComponent />
       <AboutMeComponent />
+      <ExperienceComponent />
     </Main>
   )
 }
