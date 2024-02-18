@@ -15,8 +15,11 @@ export const Content = styled.div.attrs(() => ({
 }))`
   display: flex;
   align-items: center;
+  flex-direction: column;
+  
   max-width: 60%;
   width: max-content;
+  
   gap: 2rem;
 `;
 
@@ -25,6 +28,10 @@ export const InfoArea = styled.div.attrs(() => ({
 }))`
   display: flex;
   flex-direction: column;
+
+  width: 25rem;
+  
+  text-align: center;
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -32,7 +39,7 @@ export const Title = styled.h1.attrs(() => ({
 }))`
 `;
 
-export const Subtitle = styled.p.attrs(() => ({
+export const Subtitle = styled.span.attrs(() => ({
   className: 'Subtitle',
 }))`
   font-weight: 500;
