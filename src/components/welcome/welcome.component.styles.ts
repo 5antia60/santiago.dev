@@ -23,7 +23,8 @@ export const Content = styled.div.attrs(() => ({
 export const InfoArea = styled.div.attrs(() => ({
   className: 'InfoArea',
 }))`
-  color: ${ ({ theme }) => theme.colors.mainColor };
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -31,9 +32,19 @@ export const Title = styled.h1.attrs(() => ({
 }))`
 `;
 
+export const Subtitle = styled.p.attrs(() => ({
+  className: 'Subtitle',
+}))`
+  font-weight: 500;
+  font-size: 1.1rem;
+`;
+
 export const Description = styled.p.attrs(() => ({
   className: 'Description',
 }))`
+  margin-top: 1rem;
+
+  font-weight: 400;
 `;
 
 export const Avatar = styled.img.attrs(() => ({
