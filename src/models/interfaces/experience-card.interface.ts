@@ -4,4 +4,5 @@ export interface ExperienceCardInterface {
   company: string;
   period: string;
   skills: string[];
+  emphasis?: boolean;
 }

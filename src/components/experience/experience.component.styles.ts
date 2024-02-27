@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
 export const Main = styled.div.attrs(() => ({
-  className: 'WelcomeComponent',
+  className: 'Main',
 }))`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  height: calc(100vh - ${ ({ theme }) => theme.sizes.headerHeight });
 `;
 
 export const Content = styled.div.attrs(() => ({
@@ -25,13 +23,6 @@ export const Title = styled.h1.attrs(() => ({
   className: 'Title',
 }))`
   font-size: xxx-large;
-`;
-
-export const ExperienceTitle = styled.h2.attrs(() => ({
-  className: 'ExperienceTitle',
-}))`
-  font-size: x-large;
-  font-weight: 400;
 `;
 
 export const Subtitle = styled.span.attrs(() => ({
@@ -76,8 +67,13 @@ export const Link = styled.a.attrs(() => ({
 export const ExperienceArea = styled.div.attrs(() => ({
   className: 'ExperienceArea',
 }))`
+  position: relative; 
+    
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  
+  width: 100%;
   
   margin-top: 4rem;
 `;
@@ -89,7 +85,13 @@ export const ExperienceBox = styled.div.attrs(() => ({
   flex-direction: column;
   justify-content: space-between;
 
-  margin: 1rem 0;
+  width: calc(50% - 2.5rem);
+  height: 16rem;
+
+  padding: 1rem;
+  
+  border-radius: 1rem;
+  background: #73d7c40d;
 `;
 
 export const ExperienceBoxTitle = styled.span.attrs(() => ({
@@ -110,8 +112,9 @@ export const ExperienceBoxIntro = styled.div.attrs(() => ({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  width: 100%;
+
+  width: max-content;
+  min-width: 100%;
 `;
 
 export const ExperienceBoxCompany = styled.p.attrs(() => ({
@@ -127,61 +130,29 @@ export const ExperienceBoxResume = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
-  width: 100%;
 `;
 
 export const TimelineArea = styled.div.attrs(() => ({
   className: 'TimelineArea',
 }))`
-  position: relative;
-  
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-  width: calc(50% - 1rem);
-  height: 25rem;
 
-  padding-right: 0.6rem;
-  overflow-y: scroll;
-
-  text-align: justify;
-
-  &::-webkit-scrollbar {
-    width: .3rem;
-  }
-
-  /* Track */
-
-  &::-webkit-scrollbar-track {
-    box-shadow: 0;
-    border-radius: 10px;
-  }
-
-  /* Handle */
-
-  &::-webkit-scrollbar-thumb {
-    background: ${ ({ theme }) => theme.colors.secondaryBackground };
-    border-radius: 10px;
-  }
-
-  /* Handle on hover */
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: ${ ({ theme }) => theme.colors.secondaryColor };
-  }
-`;
-
-export const TimelineAreaFooter = styled.div.attrs(() => ({
-  className: 'TimelineAreaFooter',
-}))`
-  position: absolute;
-  bottom: 0;
-  
   width: 100%;
-  height: 1rem;
 
-  background: red;
+  padding-bottom: 4rem;
+  margin-top: 2rem;
+  gap: 1rem;
+  
+  overflow: hidden;
+    
+  text-align: justify;
+    
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Intro = styled.div.attrs(() => ({
@@ -190,7 +161,7 @@ export const Intro = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
 
-  width: calc(50% - 1rem);
+  width: 100%;
   
   text-align: start;
 `;

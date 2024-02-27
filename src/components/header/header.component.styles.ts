@@ -10,7 +10,7 @@ export const Main = styled.div.attrs(() => ({
   justify-content: space-between;
   
   height: ${ ({ theme }) => theme.sizes.headerHeight };
-  width: calc(100% - 6rem);
+  width: calc(100% - 5.225rem);
 
   padding: 1rem 2.5rem;
 

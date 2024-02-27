@@ -6,7 +6,6 @@ import {
   Content,
   Description,
   Intro,
-  ExperienceTitle,
   Main,
   TimelineArea,
   Subtitle,
@@ -17,7 +16,7 @@ import {
   ExperienceBoxTitle,
   ExperienceBoxDescription,
   ExperienceBoxIntro,
-  ExperienceBoxResume, ExperienceBoxCompany, TimelineAreaFooter
+  ExperienceBoxResume, ExperienceBoxCompany,
 } from './experience.component.styles.ts';
 import santiagoResumePdf from '../../assets/files/santiago-resume.pdf';
 import SkillsAreaComponent from '../skills-area/skills-area.component.tsx';
@@ -26,14 +25,22 @@ import { ExperienceCardInterface } from '../../models/interfaces/experience-card
 //#endregion
 
 export default function ExperienceComponent(): ReactElement {
+
+  //#region Props
+
   const experienceList: ExperienceCardInterface[] = [
     {
-      title: 'Assistente/Monitor de laboratório',
-      company: 'Laboratório de eng. elétrica | FACENS',
-      descriptions: ['Manutenção de equipamentos elétricos e desenvolvimento de sistemas para uso interno dos ' +
-        'funcionários e gestores do laboratorio.'],
-      period: 'Jan 2020 - Dez 2020',
-      skills: ['C#', 'SqlServer', 'Git'],
+      title: 'Desenvolvedor FullStack | Web/App',
+      company: 'LIGA Facens',
+      descriptions: [
+        'Desenvolvimento de sites e aplicativos web, realização de tarefas Front-End e, principalmente ' +
+        'Back-End.',
+        'Desenvolvimento de telas, componentes reutilizáveis e estilos.',
+        'Construção de APIs e análises e otimização de bancos de dados.',
+      ],
+      period: 'Jun 2022 - Atual',
+      skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'NestJs', 'IonicFramework', 'TypeScript', 'Git', 'PostgreSql'],
+      emphasis: true,
     },
     {
       title: 'Estagiário - Auxiliar de desenvolvimento',
@@ -44,20 +51,16 @@ export default function ExperienceComponent(): ReactElement {
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'TypeScript', 'Git'],
     },
     {
-      title: 'Desenvolvedor FullStack | Web/App',
-      company: 'LIGA Facens',
-      descriptions: [
-        'Desenvolvimento de sites e aplicativos web, realização de tarefas Front-End e, principalmente ' +
-        'Back-End.',
-        'Construção de telas, desenvolvimento de componentes reutilizáveis e aplicação estilos que garantem uma ' +
-        'experiência de usuário fluida e coerente.',
-        'Construção de APIs robustas que fornecem acesso aos recursos do sistema de forma eficiente e segura, ' +
-        'com uma análise e otimização do banco de dados.',
-      ],
-      period: 'Jun 2022 - Atual',
-      skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'IonicFramework', 'TypeScript', 'Git', 'PostgreSql', 'NestJs'],
+      title: 'Assistente/Monitor de laboratório',
+      company: 'Laboratório de eng. elétrica | FACENS',
+      descriptions: ['Manutenção de equipamentos elétricos e desenvolvimento de sistemas para uso interno dos ' +
+      'funcionários e gestores do laboratorio.'],
+      period: 'Jan 2020 - Dez 2020',
+      skills: ['C#', 'SqlServer', 'Git'],
     },
-  ]
+  ];
+
+  //#endregion
 
   return (
     <Main>
@@ -67,8 +70,6 @@ export default function ExperienceComponent(): ReactElement {
 
         <ExperienceArea>
           <Intro>
-            <ExperienceTitle>Formação</ExperienceTitle>
-
             <Description>
               Desde o início da minha jornada na faculdade de
               <Highlight> engenharia da computação </Highlight>
@@ -87,10 +88,8 @@ export default function ExperienceComponent(): ReactElement {
           </Intro>
 
           <TimelineArea>
-            <ExperienceTitle>Experiência</ExperienceTitle>
-
             { experienceList.map(experience =>
-              <ExperienceBox>
+              <ExperienceBox key={ experience.title } style={ experience.emphasis ? { width: '100%' } : {} }>
                 <ExperienceBoxIntro>
                   <ExperienceBoxTitle>{ experience.title }</ExperienceBoxTitle>
                   <p>{ experience.period }</p>
@@ -98,9 +97,10 @@ export default function ExperienceComponent(): ReactElement {
 
                 <ExperienceBoxCompany>{ experience.company }</ExperienceBoxCompany>
 
+
                 <ExperienceBoxResume>
-                  { experience.descriptions.map(description =>
-                    <ExperienceBoxDescription>{ description }</ExperienceBoxDescription>
+                  { experience.descriptions.map((description, index) =>
+                    <ExperienceBoxDescription key={ index }>{ description }</ExperienceBoxDescription>
                   )}
 
 
@@ -111,7 +111,6 @@ export default function ExperienceComponent(): ReactElement {
                 </ExperienceBoxResume>
               </ExperienceBox>
             )}
-            <TimelineAreaFooter></TimelineAreaFooter>
           </TimelineArea>
         </ExperienceArea>
       </Content>

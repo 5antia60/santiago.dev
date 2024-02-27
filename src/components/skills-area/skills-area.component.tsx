@@ -15,7 +15,7 @@ export default function SkillsAreaComponent(props: SkillsAreaInterface): ReactEl
         }
 
         <PillsArea>
-          { props.skillsList.map(s => <Pill>{ s }</Pill>) }
+          { props.skillsList.map((s, index) => <Pill key={ index }>{ s }</Pill>) }
         </PillsArea>
       </SkillsArea>
 
@@ -24,7 +24,7 @@ export default function SkillsAreaComponent(props: SkillsAreaInterface): ReactEl
           <SkillTitle>Outros conhecimentos..</SkillTitle>
 
           <PillsArea>
-            { props?.knowledgeList?.map(k => <Pill>{ k }</Pill>) }
+            { props?.knowledgeList?.map((k, index) => <Pill key={ index }>{ k }</Pill>) }
           </PillsArea>
         </SkillsArea>
       }

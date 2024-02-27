@@ -30,6 +30,20 @@
     height: 100%;
 
     overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: .3rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: none;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #67d6c4;
+      border-radius: 10px;
+    }
   }
 }
 
