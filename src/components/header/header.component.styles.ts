@@ -15,6 +15,7 @@ export const Main = styled.div.attrs(() => ({
   padding: 1rem 2.5rem;
 
   background: linear-gradient(180deg, rgb(26 32 57) 45%, rgb(20 21 42 / 92%) 100%);
+  z-index: 1;
 `;
 
 export const Title = styled.h2.attrs(() => ({
