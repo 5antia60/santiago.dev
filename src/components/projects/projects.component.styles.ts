@@ -13,6 +13,7 @@ export const Content = styled.div.attrs(() => ({
 }))`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   
   max-width: 75%;
