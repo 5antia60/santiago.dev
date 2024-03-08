@@ -11,6 +11,7 @@ import ContactComponent from '../../components/contact/contact.component.tsx';
 //#endregion
 
 export default function HomePage(): ReactElement {
+
   return (
     <Main>
       <WelcomeComponent />

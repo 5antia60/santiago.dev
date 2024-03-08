@@ -18,7 +18,7 @@ export const Content = styled.div.attrs(() => ({
   
   max-width: 75%;
   width: max-content;
-  min-height: calc(100vh - ${ ({ theme }) => theme.sizes.headerHeight });
+  min-height: 100vh;
 `;
 
 export const Title = styled.h1.attrs(() => ({

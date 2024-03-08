@@ -7,7 +7,7 @@ export const Main = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   
-  height: calc(100vh - ${ ({ theme }) => theme.sizes.headerHeight });
+  height: 100vh;
 `;
 
 export const Content = styled.div.attrs(() => ({
