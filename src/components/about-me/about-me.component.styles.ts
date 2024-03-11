@@ -7,7 +7,11 @@ export const Main = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   
-  height: calc(100vh - ${ ({ theme }) => theme.sizes.headerHeight });
+  height: 100vh;
+
+  @media screen and (max-width: 992px) {
+    height: fit-content;
+  }
 `;
 
 export const Content = styled.div.attrs(() => ({
@@ -19,6 +23,13 @@ export const Content = styled.div.attrs(() => ({
   
   max-width: 60%;
   width: max-content;
+
+  @media screen and (max-width: 992px) {
+    max-width: 37.5rem;
+    width: 100%;
+
+    margin: 0 1rem;
+  }
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -80,6 +91,10 @@ export const AboutArea = styled.div.attrs(() => ({
   justify-content: space-between;
   
   margin-top: 4rem;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 export const Intro = styled.div.attrs(() => ({
@@ -91,10 +106,25 @@ export const Intro = styled.div.attrs(() => ({
   width: calc(50% - 1rem);
   
   text-align: start;
+    
+  h2 {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    text-align: justify;
+  }
 `;
 
 export const SkillsArea = styled.div.attrs(() => ({
   className: 'SkillsArea',
 }))`
   width: calc(50% - 1rem);
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+      
+    margin-top: 3rem;
+  }
 `;

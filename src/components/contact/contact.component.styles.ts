@@ -23,6 +23,16 @@ export const Content = styled.div.attrs(() => ({
   min-height: 15rem;
 
   gap: 2.5rem;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    max-width: 37.5rem;
+
+    padding: 0 1rem;
+    margin: 4rem 0 2rem 0;
+
+    text-align: center;
+  }
 `;
 
 export const SocialMedias = styled.div.attrs(() => ({

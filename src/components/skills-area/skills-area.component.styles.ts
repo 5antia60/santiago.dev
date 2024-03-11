@@ -27,6 +27,10 @@ export const SkillsArea = styled.div.attrs(() => ({
   flex-direction: column;
 
   width: 100%;
+
+  @media screen and (max-width: 992px) {
+    text-align: center;
+  }
 `;
 
 export const PillsArea = styled.div.attrs(() => ({
@@ -37,6 +41,10 @@ export const PillsArea = styled.div.attrs(() => ({
   flex-wrap: wrap;
 
   margin-top: 1rem;
+
+  @media screen and (max-width: 992px) {
+    justify-content: center;
+  }
 `;
 
 export const Pill = styled.p.attrs(() => ({

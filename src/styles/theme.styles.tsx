@@ -6,7 +6,4 @@ export const theme = {
     secondaryColor: '#67d6c4',
     defaultColor: '#97a2b7',
   },
-  sizes: {
-    headerHeight: '5rem',
-  },
 }
