@@ -1,6 +1,6 @@
 //#region Imports
 
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import {
   ExperienceArea,
   Content,
@@ -27,6 +27,8 @@ import { ExperienceCardInterface } from '../../models/interfaces/experience-card
 export default function ExperienceComponent(): ReactElement {
 
   //#region Props
+
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
 
   const experienceList: ExperienceCardInterface[] = [
     {
@@ -62,6 +64,15 @@ export default function ExperienceComponent(): ReactElement {
 
   //#endregion
 
+  //#region Lifecycle Events
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setInnerWidth(window.innerWidth));
+    return () => window.removeEventListener('resize', () => setInnerWidth(window.innerWidth));
+  }, []);
+
+  //#endregion
+
   return (
     <Main>
       <Content>
@@ -89,7 +100,9 @@ export default function ExperienceComponent(): ReactElement {
 
           <TimelineArea>
             { experienceList.map(experience =>
-              <ExperienceBox key={ experience.title } style={ experience.emphasis ? { width: '100%' } : {} }>
+              <ExperienceBox
+                key={ experience.title }
+                style={ experience.emphasis && innerWidth >= 992 ? { width: '100%' } : {} }>
                 <ExperienceBoxIntro>
                   <ExperienceBoxTitle>{ experience.title }</ExperienceBoxTitle>
                   <p>{ experience.period }</p>

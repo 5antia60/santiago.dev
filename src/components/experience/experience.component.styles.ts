@@ -6,6 +6,11 @@ export const Main = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 4rem;
+    text-align: center;
+  }
 `;
 
 export const Content = styled.div.attrs(() => ({
@@ -17,12 +22,21 @@ export const Content = styled.div.attrs(() => ({
   
   max-width: 75%;
   width: max-content;
+
+  @media screen and (max-width: 992px) {
+    width: calc(100% - 2rem);
+    max-width: 37.5rem;
+      
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
 `;
 
 export const Title = styled.h1.attrs(() => ({
   className: 'Title',
 }))`
   font-size: xxx-large;
+  line-height: normal;
 `;
 
 export const Subtitle = styled.span.attrs(() => ({
@@ -76,6 +90,11 @@ export const ExperienceArea = styled.div.attrs(() => ({
   width: 100%;
   
   margin-top: 4rem;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
+
 `;
 
 export const ExperienceBox = styled.div.attrs(() => ({
@@ -92,6 +111,11 @@ export const ExperienceBox = styled.div.attrs(() => ({
   
   border-radius: 1rem;
   background: #73d7c40d;
+
+  @media screen and (max-width: 992px) {
+    width: calc(100% - 2rem);
+    height: fit-content;
+  }
 `;
 
 export const ExperienceBoxTitle = styled.span.attrs(() => ({
@@ -115,6 +139,11 @@ export const ExperienceBoxIntro = styled.div.attrs(() => ({
 
   width: max-content;
   min-width: 100%;
+
+  @media screen and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;   
+  }
 `;
 
 export const ExperienceBoxCompany = styled.p.attrs(() => ({
@@ -122,6 +151,10 @@ export const ExperienceBoxCompany = styled.p.attrs(() => ({
 }))`
   font-weight: 500;
   font-size: 0.9rem;
+
+  @media screen and (max-width: 992px) {
+    text-align: center;
+  }
 `;
 
 export const ExperienceBoxResume = styled.div.attrs(() => ({
@@ -130,6 +163,10 @@ export const ExperienceBoxResume = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media screen and (max-width: 992px) {
+    text-align: center;
+  }
 `;
 
 export const TimelineArea = styled.div.attrs(() => ({
@@ -153,6 +190,11 @@ export const TimelineArea = styled.div.attrs(() => ({
   &::-webkit-scrollbar {
     display: none;
   }
+
+    @media screen and (max-width: 992px) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
 `;
 
 export const Intro = styled.div.attrs(() => ({
@@ -164,4 +206,8 @@ export const Intro = styled.div.attrs(() => ({
   width: 100%;
   
   text-align: start;
+
+  @media screen and (max-width: 992px) {
+    text-align: justify;
+  }
 `;

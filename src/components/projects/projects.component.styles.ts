@@ -44,6 +44,15 @@ export const ProjectsArea = styled.div.attrs(() => ({
   width: 60rem;
     
   margin-top: 2rem;
+
+  @media screen and (max-width: 992px) {
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+        
+    width: 100%;
+    gap: 3rem;
+  }
 `;
 
 export const ProjectCard = styled.div.attrs(() => ({

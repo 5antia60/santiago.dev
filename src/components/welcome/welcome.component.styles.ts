@@ -10,6 +10,10 @@ export const Main = styled.div.attrs(() => ({
   height: 100vh;
 
   margin-top: -2rem;
+
+  @media screen and (max-width: 992px) {
+    height: calc(100vh + 2rem);
+  }
 `;
 
 export const Content = styled.div.attrs(() => ({
@@ -23,6 +27,10 @@ export const Content = styled.div.attrs(() => ({
   width: max-content;
   
   gap: 2rem;
+
+  @media screen and (max-width: 992px) {
+    max-width: 37rem;
+  }
 `;
 
 export const InfoArea = styled.div.attrs(() => ({
@@ -34,6 +42,12 @@ export const InfoArea = styled.div.attrs(() => ({
   width: 25rem;
   
   text-align: center;
+
+  @media screen and (max-width: 992px) {
+    width: unset;
+      padding: 0 .5rem;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h1.attrs(() => ({

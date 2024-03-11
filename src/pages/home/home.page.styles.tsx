@@ -8,4 +8,6 @@ export const Main = styled.div.attrs(() => ({
   
   background: ${ ({ theme }) => theme.colors.mainBackground };
   color: ${ ({ theme }) => theme.colors.mainColor };
+
+  overflow-x: hidden;
 `;
