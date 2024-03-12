@@ -104,16 +104,16 @@ export const Intro = styled.div.attrs(() => ({
   flex-direction: column;
 
   width: calc(50% - 1rem);
-  
-  text-align: start;
-    
-  h2 {
-    text-align: center;
-  }
+
+  text-align: justify;
 
   @media screen and (max-width: 992px) {
     width: 100%;
     text-align: justify;
+
+    h2 {
+      text-align: center;
+    }
   }
 `;
 

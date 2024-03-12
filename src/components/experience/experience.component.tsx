@@ -32,32 +32,32 @@ export default function ExperienceComponent(): ReactElement {
 
   const experienceList: ExperienceCardInterface[] = [
     {
-      title: 'Desenvolvedor FullStack | Web/App',
+      title: 'FullStack Developer | Web/App',
       company: 'LIGA Facens',
       descriptions: [
-        'Desenvolvimento de sites e aplicativos web, realização de tarefas Front-End e, principalmente ' +
+        'Development of websites and web applications, carrying out Front-End tasks and, mainly ' +
         'Back-End.',
-        'Desenvolvimento de telas, componentes reutilizáveis e estilos.',
-        'Construção de APIs e análises e otimização de bancos de dados.',
+        'Development of screens, reusable components and styles.',
+        'Building APIs and analyzing and optimizing databases.',
       ],
-      period: 'Jun 2022 - Atual',
+      period: 'Jun 2022 - Current',
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'NestJs', 'IonicFramework', 'TypeScript', 'Git', 'PostgreSql'],
       emphasis: true,
     },
     {
-      title: 'Estagiário - Auxiliar de desenvolvimento',
+      title: 'Intern - Development assistant',
       company: 'LIGA Facens',
-      descriptions: ['Desenvolvimento de sites e aplicativos, focado em Front-End mas conhecendo o mundo Back-End, ' +
-        'abusando de práticas de planejamento do método SCRUM.'],
+      descriptions: ['Development of websites and applications, focused on Front-End but knowing the Back-End world, ' +
+      'abusing SCRUM method planning practices.'],
       period: 'Mar 2021 - Jun 2022',
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'TypeScript', 'Git'],
     },
     {
-      title: 'Assistente/Monitor de laboratório',
-      company: 'Laboratório de eng. elétrica | FACENS',
-      descriptions: ['Manutenção de equipamentos elétricos e desenvolvimento de sistemas para uso interno dos ' +
-      'funcionários e gestores do laboratorio.'],
-      period: 'Jan 2020 - Dez 2020',
+      title: 'Lab Assistant/Monitor',
+      company: 'Engineering laboratory electrical | FACENS',
+      descriptions: ['Maintenance of electrical equipment and development of systems for internal use' +
+      'laboratory employees and managers.'],
+      period: 'Jan 2020 - Dec 2020',
       skills: ['C#', 'SqlServer', 'Git'],
     },
   ];
@@ -76,25 +76,25 @@ export default function ExperienceComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>Minha experiência</Title>
-        <Subtitle>Minhas experiências e formação</Subtitle>
+        <Title>My experience</Title>
+        <Subtitle>My experiences and training</Subtitle>
 
         <ExperienceArea>
           <Intro>
             <Description>
-              Desde o início da minha jornada na faculdade de
-              <Highlight> engenharia da computação </Highlight>
-              em janeiro de 2020, tenho buscado ampliar meus conhecimentos e vivenciar diversas
-              experiências na área.
+              Since the beginning of my college journey of
+              <Highlight> computer engineering </Highlight>
+              In January 2020, I have been trying to expand my knowledge and experience different
+              experiences in the area.
             </Description>
             <Description>
-              Procuro aprender e aprimorar minhas habilidades
-              para entregar um bom trabalho. Estou comprometido em explorar novos horizontes e desafios,
-              em busca de aprimoramento contínuo.
+              I try to learn and improve my skills
+              to deliver good work. I am committed to exploring new horizons and challenges,
+              in search of continuous improvement.
             </Description>
             <Description>
-              Se quiser ter uma visão mais clara sobre minha fomrmação, você pode acessar o meu
-              <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> currículo completo</Link>.
+              If you want to have a clearer view of my training, you can access my
+              <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> complete resume</Link>.
             </Description>
           </Intro>
 
