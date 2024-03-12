@@ -12,9 +12,9 @@ export default function WelcomeComponent(): ReactElement {
       <Content>
         <InfoArea>
           <Title>Santiago Delgado</Title>
-          <Subtitle>Desenvolvedor FullStack | TypeScript</Subtitle>
+          <Subtitle>FullStack Developer | Typescript</Subtitle>
 
-          <Description>Oi, meu nome é Santiago e sou um Desenvolvedor Web/App. Este é o meu portifólio para que possa me conhecer melhor.</Description>
+          <Description>Hi, my name is Santiago and I am a Web/App Developer. This is my portfolio so you can get to know me better.</Description>
         </InfoArea>
 
         <Avatar src={ profileImg } />

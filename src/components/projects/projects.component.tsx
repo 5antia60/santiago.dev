@@ -21,17 +21,17 @@ export default function ProjectsComponent(): ReactElement {
   const projects: ProjectCardInterface[] = [
     {
       image: TintimIcon,
-      description: 'Tintim FACENS é um app divertido que oferece aos usuários a oportunidade de realizar missões e responder quizzes para ganhar pontos.',
+      description: 'Tintin FACENS is a fun app that offers users the opportunity to complete missions and answer quizzes to earn points.',
       redirectUrl: 'https://play.google.com/store/apps/details?id=com.liga.app.tintim.facens&pcampaignid=web_share',
     },
     {
       image: SamaIcon,
-      description: 'O SAMA é um app para controle e gestão do ambiente acadêmico. Aprenda de forma diferente e inovadora.',
+      description: 'SAMA is an app for controlling and managing the academic environment. Learn in a different and innovative way.',
       redirectUrl: 'https://apps.apple.com/br/app/sama-ecossistema-de-ensino/id1604654157',
     },
     {
       image: OndinaIcon,
-      description: 'Chácara Ondina é um aplicativo para controle de eventos, comunicados e notificações residenciais.',
+      description: 'Chácara Ondina is an application for controlling events, announcements and residential notifications.',
       redirectUrl: 'https://play.google.com/store/apps/details?id=com.liga.chacaraondina&pcampaignid=web_share',
     },
   ];
@@ -41,15 +41,15 @@ export default function ProjectsComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>Projetos</Title>
-        <Subtitle>Alguns dos projetos que participei</Subtitle>
+        <Title>Projects</Title>
+        <Subtitle>Some of the projects I participated in</Subtitle>
 
         <ProjectsArea>
           { projects.map((project, index) =>
             <ProjectCard key={ index }>
               <ProjectCardContent>
                 <p>{ project.description }</p>
-                <ProjectRedirectBtn href={ project.redirectUrl } target="_blank">Visitar</ProjectRedirectBtn>
+                <ProjectRedirectBtn href={ project.redirectUrl } target="_blank">Visit</ProjectRedirectBtn>
               </ProjectCardContent>
 
               <ProjectImg src={ project.image } />

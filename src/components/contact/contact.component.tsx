@@ -44,7 +44,7 @@ export default function ContactComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <h3>Fique à vontade para entrar em contato comigo :)</h3>
+        <h3>Please feel free to contact me :)</h3>
 
         <SocialMedias>
           { socialMedia.map((media, index) =>

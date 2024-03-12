@@ -45,31 +45,31 @@ export default function AboutMeComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>Sobre mim</Title>
-        <Subtitle>Minhas habilidades e o que eu faço</Subtitle>
+        <Title>About me</Title>
+        <Subtitle>My skills and what I do</Subtitle>
 
         <AboutArea>
           <Intro>
-            <AboutTitle>Muito prazer!</AboutTitle>
+            <AboutTitle>Great pleasure!</AboutTitle>
 
             <Description>
-              Meu nome é Santiago e sou um Desenvolvedor Web/App, trabalho com a criação de
-              <Highlight> Front-end</Highlight> e
+              My name is Santiago and I am a Web/App Developer, I work with the creation of
+              <Highlight> Front-end</Highlight> and
               <Highlight> Back-end </Highlight>
-              de Websites e Aplicativos Web que levam ao sucesso do produto como um todo.
+              of Websites and Web Applications that lead to the success of the product as a whole.
             </Description>
             <Description>
-              Também gosto de compartilhar conteúdo relacionado ao que aprendi ao longo dos anos no Desenvolvimento Web,
-              para que possa ajudar outras pessoas da comunidade de desenvolvimento. Fica à vontade para se conectar ou
-              me seguir no meu <Link href={ linkedinUrl } target="_blank">LinkedIn</Link>/
+              I also like to share content related to what I've learned over the years in Web Development,
+              so you can help others in the development community. Feel free to connect or
+              follow me on mine <Link href={ linkedinUrl } target="_blank">LinkedIn</Link>/
               <Link href={ githubUrl } target="_blank">Github</Link>,
-              lá eu busco compartilhar conteúdo útil relacionado ao Desenvolvimento
-              Web e Programação.
+              there I seek to share useful content related to Development
+              Web and Programming.
             </Description>
-            <Description>Estou aberto a oportunidades onde posso
-              <Highlight> contribuir</Highlight>,
-              <Highlight> aprender</Highlight> e
-              <Highlight> crescer</Highlight>. Se você tiver uma boa oportunidade que corresponda às minhas habilidades e experiência, vou deixar dados para contato aqui tambêm :D</Description>
+            <Description>I'm open to opportunities wherever I can
+              <Highlight> contribute</Highlight>,
+              <Highlight> learn</Highlight> and
+              <Highlight> grow</Highlight>. If you have a good opportunity that matches my skills and experience, I will leave contact details here too :D</Description>
           </Intro>
 
           <SkillsArea>
