@@ -2,7 +2,7 @@
 
 import { ReactElement } from 'react';
 import { Avatar, Content, Description, InfoArea, Main, Subtitle, Title } from './welcome.component.styles.ts';
-import profileImg from './../../assets/images/profile.jpeg';
+import profileImg from './../../assets/images/profile.jpg';
 
 //#endregion
 
