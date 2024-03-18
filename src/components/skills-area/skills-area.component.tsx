@@ -11,7 +11,7 @@ export default function SkillsAreaComponent(props: SkillsAreaInterface): ReactEl
     <Skills>
       <SkillsArea>
         { !props.showOnlySkills &&
-          <SkillTitle>Minhas habilidades...</SkillTitle>
+          <SkillTitle>My skills...</SkillTitle>
         }
 
         <PillsArea>
@@ -21,7 +21,7 @@ export default function SkillsAreaComponent(props: SkillsAreaInterface): ReactEl
 
       { !props.showOnlySkills &&
         <SkillsArea>
-          <SkillTitle>Outros conhecimentos..</SkillTitle>
+          <SkillTitle>Other knowledges..</SkillTitle>
 
           <PillsArea>
             { props?.knowledgeList?.map((k, index) => <Pill key={ index }>{ k }</Pill>) }
