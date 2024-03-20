@@ -77,5 +77,5 @@ export const Avatar = styled.img.attrs(() => ({
   width: 20rem;
   
   border-radius: 10rem;
-  object-fit: cover;
+  object-fit: fill;
 `;
