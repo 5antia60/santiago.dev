@@ -21,25 +21,25 @@ export default function AboutMeComponent(): ReactElement {
   const skillsList: string[] = [
     'TypeScript',
     'JavaScript',
-    'Front-End',
-    'Back-End',
     'HTML & SCSS',
-    'styled-components',
     'Angular',
     'ReactJs',
+    'styled-components',
+    'Next.js',
+    'tailwindcss',
     'IonicFramework',
     'NodeJs',
     'NestJs',
-    'PostgreSql',
-    'Testes Unitários',
+    'Postgresql',
+    'Unit Testing',
     'Git',
   ];
 
   const knowledgeList: string[] = [
     'Java',
+    'Python',
     'C#',
     'C++',
-    'SqlServer',
   ];
 
   return (
