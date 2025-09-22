@@ -1,6 +1,6 @@
 //#region Imports
 
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
 import {
   ExperienceArea,
   Content,
@@ -16,11 +16,19 @@ import {
   ExperienceBoxTitle,
   ExperienceBoxDescription,
   ExperienceBoxIntro,
-  ExperienceBoxResume, ExperienceBoxCompany,
+  ExperienceBoxResume,
+  ExperienceBoxCompany,
+  ExperienceBoxTitleLabel,
+  ExperienceBoxHeader,
+  ExperienceBoxImg,
+  TimelineBox, LineUi, CircleUi,
 } from './experience.component.styles.ts';
 import santiagoResumePdf from '../../assets/files/santiago-resume.pdf';
 import SkillsAreaComponent from '../skills-area/skills-area.component.tsx';
 import { ExperienceCardInterface } from '../../models/interfaces/experience-card.interface.ts';
+import lenovoImg from './../../assets/images/lenovo.jpg';
+import facensImg from './../../assets/images/facens.png';
+import ligaImg from './../../assets/images/liga.jpg';
 
 //#endregion
 
@@ -28,25 +36,35 @@ export default function ExperienceComponent(): ReactElement {
 
   //#region Props
 
-  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
-
   const experienceList: ExperienceCardInterface[] = [
+    {
+      title: 'Junior Software Developer | Frontend',
+      company: 'Lenovo',
+      companyImg: lenovoImg,
+      descriptions: [
+        'Software development focused on frontend solutions using Next.js.',
+        'Agile methodologies on a daily basis for better project results.',
+      ],
+      period: 'Mar 2025 - Current',
+      skills: ['Next.js', 'ReactJs', 'Tailwindcss', 'TypeScript', 'Unit Testing', 'Git'],
+    },
     {
       title: 'FullStack Developer | Web/App',
       company: 'LIGA Facens',
+      companyImg: ligaImg,
       descriptions: [
         'Development of websites and web applications, carrying out Front-End tasks and, mainly ' +
         'Back-End.',
         'Development of screens, reusable components and styles.',
         'Building APIs and analyzing and optimizing databases.',
       ],
-      period: 'Jun 2022 - Current',
+      period: 'Jun 2022 - Mar 2025',
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'NestJs', 'IonicFramework', 'TypeScript', 'Git', 'PostgreSql'],
-      emphasis: true,
     },
     {
       title: 'Intern - Development assistant',
       company: 'LIGA Facens',
+      companyImg: ligaImg,
       descriptions: ['Development of websites and applications, focused on Front-End but knowing the Back-End world, ' +
       'abusing SCRUM method planning practices.'],
       period: 'Mar 2021 - Jun 2022',
@@ -55,21 +73,13 @@ export default function ExperienceComponent(): ReactElement {
     {
       title: 'Lab Assistant/Monitor',
       company: 'Engineering laboratory electrical | FACENS',
+      companyImg: facensImg,
       descriptions: ['Maintenance of electrical equipment and development of systems for internal use' +
       'laboratory employees and managers.'],
       period: 'Jan 2020 - Dec 2020',
       skills: ['C#', 'SqlServer', 'Git'],
     },
   ];
-
-  //#endregion
-
-  //#region Lifecycle Events
-
-  useEffect(() => {
-    window.addEventListener('resize', () => setInnerWidth(window.innerWidth));
-    return () => window.removeEventListener('resize', () => setInnerWidth(window.innerWidth));
-  }, []);
 
   //#endregion
 
@@ -99,31 +109,45 @@ export default function ExperienceComponent(): ReactElement {
           </Intro>
 
           <TimelineArea>
-            { experienceList.map(experience =>
-              <ExperienceBox
-                key={ experience.title }
-                style={ experience.emphasis && innerWidth >= 992 ? { width: '100%' } : {} }>
-                <ExperienceBoxIntro>
-                  <ExperienceBoxTitle>{ experience.title }</ExperienceBoxTitle>
-                  <p>{ experience.period }</p>
-                </ExperienceBoxIntro>
+            <LineUi>
+              <CircleUi />
+              <CircleUi />
+              <CircleUi />
+              <CircleUi />
+            </LineUi>
 
-                <ExperienceBoxCompany>{ experience.company }</ExperienceBoxCompany>
+            <TimelineBox>
+              { experienceList.map(experience =>
+                <ExperienceBox
+                  key={ experience.title }
+                >
+                  <ExperienceBoxIntro>
+                    <ExperienceBoxHeader>
+                      <ExperienceBoxImg src={experience.companyImg} />
+
+                      <ExperienceBoxTitle>
+                        <ExperienceBoxTitleLabel>{ experience.title }</ExperienceBoxTitleLabel>
+                        <ExperienceBoxCompany>{ experience.company }</ExperienceBoxCompany>
+                      </ExperienceBoxTitle>
+                    </ExperienceBoxHeader>
+
+                    <p>{ experience.period }</p>
+                  </ExperienceBoxIntro>
+
+                  <ExperienceBoxResume>
+                    { experience.descriptions.map((description, index) =>
+                      <ExperienceBoxDescription key={ index }>{ description }</ExperienceBoxDescription>
+                    )}
 
 
-                <ExperienceBoxResume>
-                  { experience.descriptions.map((description, index) =>
-                    <ExperienceBoxDescription key={ index }>{ description }</ExperienceBoxDescription>
-                  )}
-
-
-                  <SkillsAreaComponent
-                    skillsList={ experience.skills }
-                    showOnlySkills={ true }
-                  />
-                </ExperienceBoxResume>
-              </ExperienceBox>
-            )}
+                    <SkillsAreaComponent
+                      skillsList={ experience.skills }
+                      showOnlySkills={ true }
+                    />
+                  </ExperienceBoxResume>
+                </ExperienceBox>
+              )}
+            </TimelineBox>
           </TimelineArea>
         </ExperienceArea>
       </Content>
