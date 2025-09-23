@@ -1,9 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { theme } from './styles/theme.styles.tsx';
+import { theme } from './resources/styles/theme.styles.tsx';
 import { ThemeProvider } from 'styled-components';
+import { i18nInstance } from './core/controllers/i18n.controller.ts';
 import Routes from './routes.tsx';
 import './index.css'
+
+i18nInstance();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

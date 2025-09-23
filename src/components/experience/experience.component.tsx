@@ -1,6 +1,8 @@
 //#region Imports
 
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
+import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
 import {
   ExperienceArea,
   Content,
@@ -23,9 +25,9 @@ import {
   ExperienceBoxImg,
   TimelineBox, LineUi, CircleUi,
 } from './experience.component.styles.ts';
-import santiagoResumePdf from '../../assets/files/santiago-resume.pdf';
+import { ExperienceCardInterface } from '../../core/models/interfaces/experience-card.interface.ts';
 import SkillsAreaComponent from '../skills-area/skills-area.component.tsx';
-import { ExperienceCardInterface } from '../../models/interfaces/experience-card.interface.ts';
+import santiagoResumePdf from '../../assets/files/santiago-resume.pdf';
 import lenovoImg from './../../assets/images/lenovo.jpg';
 import facensImg from './../../assets/images/facens.png';
 import ligaImg from './../../assets/images/liga.jpg';
@@ -36,47 +38,50 @@ export default function ExperienceComponent(): ReactElement {
 
   //#region Props
 
+  const { t } = useTranslation(NamespaceEnum.EXPERIENCE);
+
   const experienceList: ExperienceCardInterface[] = [
     {
-      title: 'Junior Software Developer | Frontend',
-      company: 'Lenovo',
+      title: t('Junior Software Developer | Frontend'),
+      company: t('Lenovo'),
       companyImg: lenovoImg,
       descriptions: [
-        'Software development focused on frontend solutions using Next.js.',
-        'Agile methodologies on a daily basis for better project results.',
+        t('Software development focused on frontend solutions using Next.js'),
+        t('Agile methodologies on a daily basis for better project results'),
       ],
-      period: 'Mar 2025 - Current',
+      period: t('Mar 2025 - Current'),
       skills: ['Next.js', 'ReactJs', 'Tailwindcss', 'TypeScript', 'Unit Testing', 'Git'],
     },
     {
-      title: 'FullStack Developer | Web/App',
-      company: 'LIGA Facens',
+      title: t('FullStack Developer | Web/App'),
+      company: t('LIGA Facens'),
       companyImg: ligaImg,
       descriptions: [
-        'Development of websites and web applications, carrying out Front-End tasks and, mainly ' +
-        'Back-End.',
-        'Development of screens, reusable components and styles.',
-        'Building APIs and analyzing and optimizing databases.',
+        t('Development of websites and web applications, carrying out Front-End tasks and, mainly Back-End'),
+        t('Development of screens, reusable components and styles'),
+        t('Building APIs and analyzing and optimizing databases'),
       ],
-      period: 'Jun 2022 - Mar 2025',
+      period: t('Jun 2022 - Mar 2025'),
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'NestJs', 'IonicFramework', 'TypeScript', 'Git', 'PostgreSql'],
     },
     {
-      title: 'Intern - Development assistant',
-      company: 'LIGA Facens',
+      title: t('Intern - Development assistant'),
+      company: t('LIGA Facens'),
       companyImg: ligaImg,
-      descriptions: ['Development of websites and applications, focused on Front-End but knowing the Back-End world, ' +
-      'abusing SCRUM method planning practices.'],
-      period: 'Mar 2021 - Jun 2022',
+      descriptions: [
+        t('Development of websites and applications, focused on Front-End but knowing the Back-End world')
+      ],
+      period: t('Mar 2021 - Jun 2022'),
       skills: ['HTML & SCSS', 'Angular', 'ReactJs', 'TypeScript', 'Git'],
     },
     {
-      title: 'Lab Assistant/Monitor',
-      company: 'Engineering laboratory electrical | FACENS',
+      title: t('Lab Assistant/Monitor'),
+      company: t('Engineering laboratory electrical | FACENS'),
       companyImg: facensImg,
-      descriptions: ['Maintenance of electrical equipment and development of systems for internal use' +
-      'laboratory employees and managers.'],
-      period: 'Jan 2020 - Dec 2020',
+      descriptions: [
+        t('Maintenance of electrical equipment and development of systems for internal use laboratory employees and managers')
+      ],
+      period: t('Jan 2020 - Dec 2020'),
       skills: ['C#', 'SqlServer', 'Git'],
     },
   ];
@@ -86,25 +91,22 @@ export default function ExperienceComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>My experience</Title>
-        <Subtitle>My experiences and training</Subtitle>
+        <Title>{ t('My experience') }</Title>
+        <Subtitle>{ t('My experiences and training') }</Subtitle>
 
         <ExperienceArea>
           <Intro>
             <Description>
-              Since the beginning of my college journey of
-              <Highlight> computer engineering </Highlight>
-              In January 2020, I have been trying to expand my knowledge and experience different
-              experiences in the area.
+              { t('Since the beginning of my college journey of') }
+              <Highlight> { t('computer engineering') } </Highlight>
+              { t('In January 2020...') }
             </Description>
             <Description>
-              I try to learn and improve my skills
-              to deliver good work. I am committed to exploring new horizons and challenges,
-              in search of continuous improvement.
+              { t('I try to learn and improve my skills to deliver good work') }
             </Description>
             <Description>
-              If you want to have a clearer view of my training, you can access my
-              <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> complete resume</Link>.
+              { t('If you want to have a clearer view of my training') }
+              <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> { t('complete resume') }</Link>.
             </Description>
           </Intro>
 

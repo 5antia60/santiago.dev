@@ -1,7 +1,9 @@
 //#region Imports
 
 import { ReactElement } from 'react';
-import { SocialMediaInterface } from '../../models/interfaces/social-media.interface.ts';
+import { useTranslation } from 'react-i18next';
+import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
+import { SocialMediaInterface } from '../../core/models/interfaces/social-media.interface.ts';
 import { ButtonIcon, Content, Footer, Main, MediaButton, SocialMedias } from './contact.component.styles.ts';
 import GithubIconImg from './../../assets/images/github.svg';
 import LinkedinIconImg from './../../assets/images/linkedin.svg';
@@ -12,6 +14,8 @@ import InstagramIconImg from './../../assets/images/logotipo-do-instagram.svg';
 export default function ContactComponent(): ReactElement {
 
   //#region Properties
+
+  const { t } = useTranslation(NamespaceEnum.CONTACT);
 
   const socialMedia: SocialMediaInterface[] = [
     {
@@ -44,7 +48,7 @@ export default function ContactComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <h3>Please feel free to contact me :)</h3>
+        <h3>{ t('Please feel free to contact me') }</h3>
 
         <SocialMedias>
           { socialMedia.map((media, index) =>
@@ -56,7 +60,7 @@ export default function ContactComponent(): ReactElement {
 
         <Footer>
           <span>santiago.delgado2001@outlook.com</span>
-          <p>Santiago Delgado 🇧🇷 2024</p>
+          <p>Santiago Delgado | 2025</p>
         </Footer>
       </Content>
     </Main>

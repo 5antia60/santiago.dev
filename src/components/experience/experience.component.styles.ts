@@ -173,6 +173,8 @@ export const ExperienceBoxIntro = styled.div.attrs(() => ({
 
     width: max-content;
     min-width: 100%;
+  
+    margin-bottom: 0.5rem;
 
     @media screen and (max-width: 992px) {
         display: flex;
