@@ -1,6 +1,8 @@
 //#region Imports
 
 import { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
+import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
 import {
   AboutArea,
   Content,
@@ -15,6 +17,8 @@ import SkillsAreaComponent from '../skills-area/skills-area.component.tsx';
 //#endregion
 
 export default function AboutMeComponent(): ReactElement {
+  const { t } = useTranslation(NamespaceEnum.ABOUT_ME);
+
   const githubUrl: string = 'https://github.com/5antia60';
   const linkedinUrl: string = 'https://www.linkedin.com/in/5antiag0';
 
@@ -45,31 +49,32 @@ export default function AboutMeComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>About me</Title>
-        <Subtitle>My skills and what I do</Subtitle>
+        <Title>{ t('About me') }</Title>
+        <Subtitle>{ t('My skills and what I do') }</Subtitle>
 
         <AboutArea>
           <Intro>
-            <AboutTitle>Great pleasure!</AboutTitle>
+            <AboutTitle>{ t('Great pleasure') }</AboutTitle>
 
             <Description>
-              My name is Santiago and I am a Web/App Developer, I work with the creation of
-              <Highlight> Front-end</Highlight> and
-              <Highlight> Back-end </Highlight>
-              of Websites and Web Applications that lead to the success of the product as a whole.
+              { t('My name is Santiago and I am a Web/App Developer, I work with the creation of') }
+              <Highlight> { t('Front-end') }</Highlight> { t('and') }
+              <Highlight> { t('Back-end') } </Highlight>
+              { t('of Websites and Web Applications that lead to the success of the product as a whole') }
             </Description>
             <Description>
-              I also like to share content related to what I've learned over the years in Web Development,
-              so you can help others in the development community. Feel free to connect or
-              follow me on mine <Link href={ linkedinUrl } target="_blank">LinkedIn</Link>/
-              <Link href={ githubUrl } target="_blank">Github</Link>,
-              there I seek to share useful content related to Development
-              Web and Programming.
+              { t('I also like to share content related to what Ive learned over the years in Web Development') }
+              <Link href={ linkedinUrl } target="_blank"> { t('LinkedIn') }</Link>/
+              <Link href={ githubUrl } target="_blank">{ t('Github') } </Link>
+              { t('there I seek to share useful content related to Development Web and Programming') }
             </Description>
-            <Description>I'm open to opportunities wherever I can
-              <Highlight> contribute</Highlight>,
-              <Highlight> learn</Highlight> and
-              <Highlight> grow</Highlight>. If you have a good opportunity that matches my skills and experience, I will leave contact details here too :D</Description>
+            <Description>
+              { t('I\'m open to opportunities wherever I can') }
+              <Highlight> { t('contribute') }</Highlight>,
+              <Highlight> { t('learn') }</Highlight> { t('and') }
+              <Highlight> { t('grow') }</Highlight>
+              { t('If you have a good opportunity that matches my skills and experience, I will leave contact details here too') }
+            </Description>
           </Intro>
 
           <SkillsArea>

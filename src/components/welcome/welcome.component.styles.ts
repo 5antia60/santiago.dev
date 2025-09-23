@@ -7,7 +7,7 @@ export const Main = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   
-  height: 100vh;
+  height: calc(100vh - 6rem);
 
   margin-top: -2rem;
 
