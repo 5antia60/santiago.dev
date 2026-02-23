@@ -268,8 +268,6 @@ export const TimelineBox = styled.div.attrs(() => ({
     margin-top: 2rem;
     gap: 1rem;
 
-    overflow: hidden;
-
     text-align: justify;
 
     &::-webkit-scrollbar {

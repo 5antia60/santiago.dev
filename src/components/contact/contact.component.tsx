@@ -2,8 +2,10 @@
 
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
 import { SocialMediaInterface } from '../../core/models/interfaces/social-media.interface.ts';
+import { AnimationTypeEnum } from '../../core/models/enums/animation-type.enum.ts';
+import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
+import ScrollAnimationWrapperComponent from '../wrapper/scroll-animation-wrapper.component.tsx';
 import { ButtonIcon, Content, Footer, Main, MediaButton, SocialMedias } from './contact.component.styles.ts';
 import GithubIconImg from './../../assets/images/github.svg';
 import LinkedinIconImg from './../../assets/images/linkedin.svg';
@@ -46,23 +48,28 @@ export default function ContactComponent(): ReactElement {
   //#endregion
 
   return (
-    <Main>
-      <Content>
-        <h3>{ t('Please feel free to contact me') }</h3>
+    <ScrollAnimationWrapperComponent
+      duration={ 800 }
+      animationType={ AnimationTypeEnum.SCALE_UP }
+    >
+      <Main>
+        <Content>
+          <h3>{ t('Please feel free to contact me') }</h3>
 
-        <SocialMedias>
-          { socialMedia.map((media, index) =>
-            <MediaButton onClick={ () => redirectTo(media.redirectUrl) } key={ index }>
-              <ButtonIcon src={ media.icon } />
-            </MediaButton>
-          )}
-        </SocialMedias>
+          <SocialMedias>
+            { socialMedia.map((media, index) =>
+              <MediaButton onClick={ () => redirectTo(media.redirectUrl) } key={ index }>
+                <ButtonIcon src={ media.icon } />
+              </MediaButton>
+            )}
+          </SocialMedias>
 
-        <Footer>
-          <span>santiago.delgado2001@outlook.com</span>
-          <p>Santiago Delgado | 2025</p>
-        </Footer>
-      </Content>
-    </Main>
+          <Footer>
+            <span>santiago.delgado2001@outlook.com</span>
+            <p>Santiago Delgado | 2025</p>
+          </Footer>
+        </Content>
+      </Main>
+    </ScrollAnimationWrapperComponent>
   )
 }

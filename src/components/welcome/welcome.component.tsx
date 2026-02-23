@@ -13,7 +13,6 @@ export default function WelcomeComponent(): ReactElement {
 
   return (
     <Main>
-
       <Content>
         <InfoArea>
           <Title>Santiago Delgado</Title>

@@ -2,7 +2,9 @@
 
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AnimationTypeEnum } from '../../core/models/enums/animation-type.enum.ts';
 import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
+import ScrollAnimationWrapperComponent from '../wrapper/scroll-animation-wrapper.component.tsx';
 import {
   AboutArea,
   Content,
@@ -49,41 +51,52 @@ export default function AboutMeComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>{ t('About me') }</Title>
-        <Subtitle>{ t('My skills and what I do') }</Subtitle>
+        <ScrollAnimationWrapperComponent
+          duration={ 800 }
+          animationType={ AnimationTypeEnum.FADE_IN_LEFT }
+          style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+        >
+          <Title>{ t('About me') }</Title>
+          <Subtitle>{ t('My skills and what I do') }</Subtitle>
+        </ScrollAnimationWrapperComponent>
 
-        <AboutArea>
-          <Intro>
-            <AboutTitle>{ t('Great pleasure') }</AboutTitle>
+        <ScrollAnimationWrapperComponent
+          duration={ 800 }
+          animationType={ AnimationTypeEnum.FADE_IN_RIGHT }
+        >
+          <AboutArea>
+            <Intro>
+              <AboutTitle>{ t('Great pleasure') }</AboutTitle>
 
-            <Description>
-              { t('My name is Santiago and I am a Web/App Developer, I work with the creation of') }
-              <Highlight> { t('Front-end') }</Highlight> { t('and') }
-              <Highlight> { t('Back-end') } </Highlight>
-              { t('of Websites and Web Applications that lead to the success of the product as a whole') }
-            </Description>
-            <Description>
-              { t('I also like to share content related to what Ive learned over the years in Web Development') }
-              <Link href={ linkedinUrl } target="_blank"> { t('LinkedIn') }</Link>/
-              <Link href={ githubUrl } target="_blank">{ t('Github') } </Link>
-              { t('there I seek to share useful content related to Development Web and Programming') }
-            </Description>
-            <Description>
-              { t('I\'m open to opportunities wherever I can') }
-              <Highlight> { t('contribute') }</Highlight>,
-              <Highlight> { t('learn') }</Highlight> { t('and') }
-              <Highlight> { t('grow') }</Highlight>
-              { t('If you have a good opportunity that matches my skills and experience, I will leave contact details here too') }
-            </Description>
-          </Intro>
+              <Description>
+                { t('My name is Santiago and I am a Web/App Developer, I work with the creation of') }
+                <Highlight> { t('Front-end') }</Highlight> { t('and') }
+                <Highlight> { t('Back-end') } </Highlight>
+                { t('of Websites and Web Applications that lead to the success of the product as a whole') }
+              </Description>
+              <Description>
+                { t('I also like to share content related to what Ive learned over the years in Web Development') }
+                <Link href={ linkedinUrl } target="_blank"> { t('LinkedIn') }</Link>/
+                <Link href={ githubUrl } target="_blank">{ t('Github') } </Link>
+                { t('there I seek to share useful content related to Development Web and Programming') }
+              </Description>
+              <Description>
+                { t('I\'m open to opportunities wherever I can') }
+                <Highlight> { t('contribute') }</Highlight>,
+                <Highlight> { t('learn') }</Highlight> { t('and') }
+                <Highlight> { t('grow') }</Highlight>
+                { t('If you have a good opportunity that matches my skills and experience, I will leave contact details here too') }
+              </Description>
+            </Intro>
 
-          <SkillsArea>
-            <SkillsAreaComponent
-              skillsList={ skillsList }
-              knowledgeList={ knowledgeList }
-            />
-          </SkillsArea>
-        </AboutArea>
+            <SkillsArea>
+              <SkillsAreaComponent
+                skillsList={ skillsList }
+                knowledgeList={ knowledgeList }
+              />
+            </SkillsArea>
+          </AboutArea>
+        </ScrollAnimationWrapperComponent>
       </Content>
     </Main>
   )

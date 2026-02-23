@@ -2,7 +2,9 @@
 
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AnimationTypeEnum } from '../../core/models/enums/animation-type.enum.ts';
 import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
+import ScrollAnimationWrapperComponent from '../wrapper/scroll-animation-wrapper.component.tsx';
 import {
   ExperienceArea,
   Content,
@@ -91,24 +93,35 @@ export default function ExperienceComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>{ t('My experience') }</Title>
-        <Subtitle>{ t('My experiences and training') }</Subtitle>
+        <ScrollAnimationWrapperComponent
+          duration={ 800 }
+          animationType={ AnimationTypeEnum.FADE_IN_LEFT }
+          style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+        >
+          <Title>{ t('My experience') }</Title>
+          <Subtitle>{ t('My experiences and training') }</Subtitle>
+        </ScrollAnimationWrapperComponent>
 
         <ExperienceArea>
-          <Intro>
-            <Description>
-              { t('Since the beginning of my college journey of') }
-              <Highlight> { t('computer engineering') } </Highlight>
-              { t('In January 2020...') }
-            </Description>
-            <Description>
-              { t('I try to learn and improve my skills to deliver good work') }
-            </Description>
-            <Description>
-              { t('If you want to have a clearer view of my training') }
-              <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> { t('complete resume') }</Link>.
-            </Description>
-          </Intro>
+          <ScrollAnimationWrapperComponent
+            duration={ 800 }
+            animationType={ AnimationTypeEnum.FADE_IN_RIGHT }
+          >
+            <Intro>
+              <Description>
+                { t('Since the beginning of my college journey of') }
+                <Highlight> { t('computer engineering') } </Highlight>
+                { t('In January 2020...') }
+              </Description>
+              <Description>
+                { t('I try to learn and improve my skills to deliver good work') }
+              </Description>
+              <Description>
+                { t('If you want to have a clearer view of my training') }
+                <Link href={ santiagoResumePdf } rel="noopener noreferrer" target="_blank"> { t('complete resume') }</Link>.
+              </Description>
+            </Intro>
+          </ScrollAnimationWrapperComponent>
 
           <TimelineArea>
             <LineUi>
@@ -119,35 +132,40 @@ export default function ExperienceComponent(): ReactElement {
             </LineUi>
 
             <TimelineBox>
-              { experienceList.map(experience =>
-                <ExperienceBox
-                  key={ experience.title }
+              { experienceList.map((experience, index) =>
+                <ScrollAnimationWrapperComponent
+                  duration={ 800 }
+                  animationType={ index % 2 === 0 ? AnimationTypeEnum.FADE_IN_LEFT : AnimationTypeEnum.FADE_IN_RIGHT }
                 >
-                  <ExperienceBoxIntro>
-                    <ExperienceBoxHeader>
-                      <ExperienceBoxImg src={experience.companyImg} />
+                  <ExperienceBox
+                    key={ experience.title }
+                  >
+                    <ExperienceBoxIntro>
+                      <ExperienceBoxHeader>
+                        <ExperienceBoxImg src={experience.companyImg} />
 
-                      <ExperienceBoxTitle>
-                        <ExperienceBoxTitleLabel>{ experience.title }</ExperienceBoxTitleLabel>
-                        <ExperienceBoxCompany>{ experience.company }</ExperienceBoxCompany>
-                      </ExperienceBoxTitle>
-                    </ExperienceBoxHeader>
+                        <ExperienceBoxTitle>
+                          <ExperienceBoxTitleLabel>{ experience.title }</ExperienceBoxTitleLabel>
+                          <ExperienceBoxCompany>{ experience.company }</ExperienceBoxCompany>
+                        </ExperienceBoxTitle>
+                      </ExperienceBoxHeader>
 
-                    <p>{ experience.period }</p>
-                  </ExperienceBoxIntro>
+                      <p>{ experience.period }</p>
+                    </ExperienceBoxIntro>
 
-                  <ExperienceBoxResume>
-                    { experience.descriptions.map((description, index) =>
-                      <ExperienceBoxDescription key={ index }>{ description }</ExperienceBoxDescription>
-                    )}
+                    <ExperienceBoxResume>
+                      { experience.descriptions.map((description, index) =>
+                        <ExperienceBoxDescription key={ index }>{ description }</ExperienceBoxDescription>
+                      )}
 
 
-                    <SkillsAreaComponent
-                      skillsList={ experience.skills }
-                      showOnlySkills={ true }
-                    />
-                  </ExperienceBoxResume>
-                </ExperienceBox>
+                      <SkillsAreaComponent
+                        skillsList={ experience.skills }
+                        showOnlySkills={ true }
+                      />
+                    </ExperienceBoxResume>
+                  </ExperienceBox>
+                </ScrollAnimationWrapperComponent>
               )}
             </TimelineBox>
           </TimelineArea>

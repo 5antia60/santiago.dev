@@ -2,6 +2,8 @@
 
 import { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ProjectCardInterface } from '../../core/models/interfaces/project-card.interface.ts';
+import { AnimationTypeEnum } from '../../core/models/enums/animation-type.enum.ts';
 import { NamespaceEnum } from '../../core/models/enums/namespace.enum.ts';
 import {
   Content,
@@ -9,7 +11,7 @@ import {
   Subtitle,
   Title,
 } from './projects.component.styles.ts';
-import { ProjectCardInterface } from '../../core/models/interfaces/project-card.interface.ts';
+import ScrollAnimationWrapperComponent from '../wrapper/scroll-animation-wrapper.component.tsx';
 import TintimIcon from './../../assets/images/tintim_icon.png';
 import OndinaIcon from './../../assets/images/ondina_icon.png';
 import SamaIcon from './../../assets/images/sama_icon.png';
@@ -45,21 +47,33 @@ export default function ProjectsComponent(): ReactElement {
   return (
     <Main>
       <Content>
-        <Title>{ t('Projects') }</Title>
-        <Subtitle>{ t('Some of the projects I participated in') }</Subtitle>
+        <ScrollAnimationWrapperComponent
+          duration={ 800 }
+          animationType={ AnimationTypeEnum.SCALE_UP }
+          style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+        >
+          <Title>{ t('Projects') }</Title>
+          <Subtitle>{ t('Some of the projects I participated in') }</Subtitle>
+        </ScrollAnimationWrapperComponent>
 
-        <ProjectsArea>
-          { projects.map((project, index) =>
-            <ProjectCard key={ index }>
-              <ProjectCardContent>
-                <p>{ project.description }</p>
-                <ProjectRedirectBtn href={ project.redirectUrl } target="_blank">{ t('Visit') }</ProjectRedirectBtn>
-              </ProjectCardContent>
+        <ScrollAnimationWrapperComponent
+          duration={ 800 }
+          animationType={ AnimationTypeEnum.FADE_IN_UP }
+          style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+        >
+          <ProjectsArea>
+            { projects.map((project, index) =>
+              <ProjectCard key={ index }>
+                <ProjectCardContent>
+                  <p>{ project.description }</p>
+                  <ProjectRedirectBtn href={ project.redirectUrl } target="_blank">{ t('Visit') }</ProjectRedirectBtn>
+                </ProjectCardContent>
 
-              <ProjectImg src={ project.image } />
-            </ProjectCard>
-          )}
-        </ProjectsArea>
+                <ProjectImg src={ project.image } />
+              </ProjectCard>
+            )}
+          </ProjectsArea>
+        </ScrollAnimationWrapperComponent>
       </Content>
     </Main>
   )
