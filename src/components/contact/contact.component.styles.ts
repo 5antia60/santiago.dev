@@ -18,11 +18,13 @@ export const Content = styled.div.attrs(() => ({
   flex-direction: column;
   align-items: center;
   
-  max-width: 75%;
+  max-width: 65rem;
   width: max-content;
   min-height: 15rem;
 
   gap: 2.5rem;
+  
+  margin: 0 auto;
 
   @media screen and (max-width: 992px) {
     width: 100%;

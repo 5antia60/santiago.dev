@@ -16,9 +16,11 @@ export const Content = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   
-  max-width: 75%;
+  max-width: 65rem;
   width: max-content;
   min-height: 100vh;
+  
+  margin: 0 auto;
 `;
 
 export const Title = styled.h1.attrs(() => ({

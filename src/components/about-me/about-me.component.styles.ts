@@ -20,9 +20,11 @@ export const Content = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  max-width: 60%;
+
+  max-width: 65rem;
   width: max-content;
+
+  margin: 0 auto;
 
   @media screen and (max-width: 992px) {
     max-width: 37.5rem;

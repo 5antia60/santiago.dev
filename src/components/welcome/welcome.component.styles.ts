@@ -22,11 +22,13 @@ export const Content = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-  max-width: 60%;
+
+  max-width: 65rem;
   width: max-content;
   
   gap: 2rem;
+  
+  margin: 0 auto;
 
   @media screen and (max-width: 992px) {
     max-width: 37rem;
